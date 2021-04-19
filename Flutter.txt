@@ -1,0 +1,7 @@
+flutter channel stable
+flutter upgrade --force
+flutter pub cache repair
+cd <YOUR APP FOLDER>
+flutter clean
+If the issue persist please provide your updated
+flutter doctor -v and flutter run --verbose
