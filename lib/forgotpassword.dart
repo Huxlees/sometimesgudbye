@@ -58,11 +58,9 @@ class _MyAppState extends State<ForgotPassword> {
     var test;
     Map data = {'UserName': email, 'UserPassword': pass, 'OTP': otp};
     var jsonResponse = null;
-    // var responses =
-    //     await http.post("http://13.127.50.115:1995/info/DocPass", body: data);
 
     final responses =
-        await http.post(Uri.https('13.127.50.115:1995/info', 'DocPass'),
+        await http.post(Uri.https('localhost/info', 'DocPass'),
             headers: <String, String>{
               'Content-Type': 'application/json; charset=UTF-8',
             },
