@@ -15,7 +15,7 @@ class _ScheduleListPageState extends State<PastScheduleListPage> {
   String doctorimage = "";
 
   Future<String> getData() async {
-    String baseurl = 'http://13.127.50.115:1995/';
+    String baseurl = 'http://localhost/';
 
     final prefs = await SharedPreferences.getInstance();
     final doctor = prefs.getString('doctor') ?? '';
