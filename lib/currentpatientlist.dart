@@ -18,7 +18,7 @@ class _CurrentPatientListPageState extends State<CurrentPatientListPage> {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('token') ?? '';
     final doctor = prefs.getString('doctor') ?? '';
-    String baseurl = 'http://13.127.50.115:1995/';
+    String baseurl = 'http://localhost/';
     String endpoint = 'info/MedCurrentPatient?doctorid=' + token;
     String url = baseurl + endpoint;
     // var response = await http
