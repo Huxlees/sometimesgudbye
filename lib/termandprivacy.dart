@@ -6,7 +6,7 @@ class PrivacyPolicy extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: WebViewContainer(
-          'https://webservices.rajmedicity.com/DoctorPrivacyPolicity.html',
+          'https://webservices.com/DoctorPrivacyPolicity.html',
           'Privacy Policy'),
       debugShowCheckedModeBanner: false,
     );
