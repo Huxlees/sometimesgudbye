@@ -21,8 +21,7 @@ class _PatientListPageState extends State<PatientListPage> {
     String baseurl = 'http://localhost/';
     String endpoint = 'info/DoctorBook?doctorid=' + token + '&mode=0';
     String url = baseurl + endpoint;
-    // var response = await http
-    //     .get(Uri.encodeFull(url), headers: {"Accept": "application/json"});
+    
     var response = await http.get(Uri.parse(url));
 
     this.setState(
