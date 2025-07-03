@@ -12,9 +12,7 @@ class _OurDoctorPageState extends State<OurDoctorPage> {
   List data;
 
   Future<String> getData() async {
-    // var response = await http.get(
-    //     Uri.encodeFull("http://13.127.50.115:1995/info/Doctor"),
-    //     headers: {"Accept": "application/json"});
+    
     var response =
         await http.get(Uri.parse('http://localhost/info/Doctor'));
 
@@ -22,12 +20,7 @@ class _OurDoctorPageState extends State<OurDoctorPage> {
       data = json.decode(response.body);
     });
 
-    // var response =
-    //     await http.get(Uri.https('http://13.127.50.115:1995/info', 'Doctor'),
-    //         headers: <String, String>{
-    //           'Content-Type': 'application/json; charset=UTF-8',
-    //         },
-    //         body: data);
+    
 
     print(data[0]["doctorid"]);
     print(data[0]["doctor"]);
