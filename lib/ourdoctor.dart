@@ -16,7 +16,7 @@ class _OurDoctorPageState extends State<OurDoctorPage> {
     //     Uri.encodeFull("http://13.127.50.115:1995/info/Doctor"),
     //     headers: {"Accept": "application/json"});
     var response =
-        await http.get(Uri.parse('http://13.127.50.115:1995/info/Doctor'));
+        await http.get(Uri.parse('http://localhost/info/Doctor'));
 
     this.setState(() {
       data = json.decode(response.body);
