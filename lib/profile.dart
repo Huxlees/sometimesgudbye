@@ -10,7 +10,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 Future<List<Profile>> fetchProfiles(http.Client client) async {
   final prefs = await SharedPreferences.getInstance();
   final token = prefs.getString('token') ?? '';
-  String baseurl = 'http://13.127.50.115:1995/';
+  String baseurl = 'http://localhost/';
   String endpoint = 'info/DoctorLogin?doctorid=';
   String url = baseurl + endpoint + token;
   //final response = await client.get(url);
