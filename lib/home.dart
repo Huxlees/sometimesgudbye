@@ -25,7 +25,7 @@ class _ScheduleListPageState extends State<HomePage> {
   String doctorNoAppoint = "";
 
   Future<String> getData() async {
-    String baseurl = 'http://13.127.50.115:1995/';
+    String baseurl = 'http://localhost/';
 
     final prefs = await SharedPreferences.getInstance();
     final doctor = prefs.getString('doctor') ?? '';
@@ -63,10 +63,8 @@ class _ScheduleListPageState extends State<HomePage> {
     String doctorid = prefs.getString('token') ?? '';
     Map data = {'DoctorID': doctorid};
     var jsonResponseNoAp = null;
-    // var responseAp = await http
-    //     .post("http://13.127.50.115:1995/info/DoctorPatientRecord", body: data);
-
-    var url = Uri.parse('http://13.127.50.115:1995/info/DoctorPatientRecord');
+   
+    var url = Uri.parse('http://localhost/info/DoctorPatientRecord');
     var responseAp = await http.post(url, body: {'DoctorID': doctorid});
 
     if (responseAp.statusCode == 200) {
@@ -91,7 +89,7 @@ class _ScheduleListPageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final appcastURL = 'http://13.127.50.115:1995/info/upgrader';
+    final appcastURL = 'http://localhost/info/upgrader';
     final cfg = AppcastConfiguration(url: appcastURL, supportedOS: ['android']);
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     return UpgradeAlert(
