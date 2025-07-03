@@ -49,29 +49,12 @@ class _LoginPageState extends State<LoginPage> {
     String test;
     Map data = {'mobileno': email, 'userpassword': pass};
     var jsonResponse = null;
-    // var response = await http.post("http://13.127.50.115:1995/info/DoctorLogin",
-    //     body: data);
-
-    // var response =
-    //     await http.post(Uri.http('13.127.50.115:1995/info', 'DoctorLogin'),
-    //         headers: <String, String>{
-    //           'Content-Type': 'application/json; charset=UTF-8',
-    //         },
-    //         body: data);
-
-    var url = Uri.parse('http://13.127.50.115:1995/info/DoctorLogin');
+   
+    var url = Uri.parse('http://localhost/info/DoctorLogin');
     var response =
         await http.post(url, body: {'mobileno': email, 'userpassword': pass});
 
-    //   final response = await http.post(
-    //   Uri.https('jsonplaceholder.typicode.com', 'albums'),
-    //   headers: <String, String>{
-    //     'Content-Type': 'application/json; charset=UTF-8',
-    //   },
-    //   body: jsonEncode(<String, String>{
-    //     'title': 'title',
-    //   }),
-    // );
+    
     if (response.statusCode == 200) {
       jsonResponse = json.decode(response.body);
       if (jsonResponse != null) {
